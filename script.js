@@ -1,10 +1,9 @@
 const columnAmount = 4;
 const rowAmount = columnAmount;
 
-console.log(columnAmount, rowAmount);
 createDrawSpace(columnAmount, rowAmount);
 
-function createDrawSpace (colTotal, rowTotal){
+function createDrawSpace (colTotal, rowTotal){ //
     
     const container = document.querySelector(".sketchContainer")
 
@@ -13,13 +12,21 @@ function createDrawSpace (colTotal, rowTotal){
     for(let rowID=1; rowID<=rowTotal; rowID++){
         for(let colID=1; colID<=colTotal; colID++){
             const drawSquares = document.createElement("div");
-            const squareID = `${rowID},${colID}`;
-    
-            console.log(squareID);
-    
-            drawSquares.classList.add(squareID);
+            const squareID = `${rowID}${colID}`;
+       
+            drawSquares.classList.add("drawDiv");
+            drawSquares.setAttribute("id",squareID);
             container.appendChild(drawSquares);
         }
     }
-    }
-    
+}
+
+const drawDivs = document.querySelectorAll(".drawDiv");
+
+drawDivs.forEach ((item) => {
+    item.addEventListener("mouseover", () => {colourDiv(item.id)});
+});
+
+function colourDiv (squareID){
+     console.log(squareID);
+}

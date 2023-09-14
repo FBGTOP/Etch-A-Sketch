@@ -1,3 +1,19 @@
+.title{
+    height: 100px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.main{
+    display:flex;
+    justify-content: center;
+}
+
+.tools{
+    width: 30%;
+    text-align: center;
+}
+
 .sketchContainer{
     height: 500px;
     width: 500px;
