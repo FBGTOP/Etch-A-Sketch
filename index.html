@@ -10,10 +10,16 @@
 <body>
     <div class="title">Etch-A-Sketch</div>
     <div class="main">
-        <div class="tools"><u>Tools</u></div>
-        <div class="sketchContainer">
-
+        <div class="tools"><u>Tools</u>
+            <button>Black</button>
+            <button>White</button>
+            <button>Random</button>
+            <button>Reset</button>
+            <input type = "Text" placeholder="Board size" value="16" onchange="changeSize(this.value)">
+            <button>Set Grid Size</button>
         </div>
+        <div class="sketchContainer"></div>
+
     </div>
 </body>
 </html>

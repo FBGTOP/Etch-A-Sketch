@@ -1,32 +1,34 @@
-const columnAmount = 4;
-const rowAmount = columnAmount;
+function createBoard(size){
 
-createDrawSpace(columnAmount, rowAmount);
+    let board = document.querySelector(".sketchContainer");
 
-function createDrawSpace (colTotal, rowTotal){ //
-    
-    const container = document.querySelector(".sketchContainer")
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
 
-    container.style.cssText = `grid-template-columns: repeat(${colTotal}, 1fr);`;
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    for(let rowID=1; rowID<=rowTotal; rowID++){
-        for(let colID=1; colID<=colTotal; colID++){
-            const drawSquares = document.createElement("div");
-            const squareID = `${rowID}${colID}`;
-       
-            drawSquares.classList.add("drawDiv");
-            drawSquares.setAttribute("id",squareID);
-            container.appendChild(drawSquares);
-        }
+    let totalSize = size*size;
+
+    for(let i = 0; i < totalSize; i++){
+        let square = document.createElement("div");
+        square.addEventListener("mouseover", ()=>{
+            square.style.backgroundColor = "black";
+        })
+        square.style.backgroundColor = "white";
+        board.insertAdjacentElement("beforeend", square);
     }
 }
 
-const drawDivs = document.querySelectorAll(".drawDiv");
+createBoard(16);
 
-drawDivs.forEach ((item) => {
-    item.addEventListener("mouseover", () => {colourDiv(item.id)});
-});
-
-function colourDiv (squareID){
-     console.log(squareID);
+function changeSize(input){
+ 
+    if(input >=2 && input <=100){
+        createBoard(input);
+    }
+    else{
+        console.log("Non valid board size");
+    }
 }
+
