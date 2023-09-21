@@ -3,6 +3,8 @@ let penColour = "black";
 function createBoard(size){
 
     let board = document.querySelector(".sketchContainer");
+    let input = document.querySelector("input");
+    input.value = size;
 
     let squares = board.querySelectorAll("div");
     squares.forEach((div) => div.remove());
@@ -21,6 +23,7 @@ function createBoard(size){
 }
 
 createBoard(16);
+randomRGB();
 
 function changeSize(input){
  
@@ -33,10 +36,14 @@ function changeSize(input){
 }
 
 function colourSquare(){
-    this.style.backgroundColor = penColour;
+    if(penColour === "random"){
+        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
+    }
+    else{
+        this.style.backgroundColor = penColour;
+}
 }
 
 function changeColour(choice){
     penColour = choice;
 }
-
