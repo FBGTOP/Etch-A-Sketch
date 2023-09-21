@@ -18,8 +18,10 @@
             <button onclick="changeColour('white')">Eraser</button>
             <button onclick="changeColour('random')">Random</button>
             <button onclick="createBoard(16)">Reset</button> <!---Resets grid to initial 16x16 with blank canvas-->
-            <input type = "Text" placeholder="Board size" value="16" onchange="changeSize(this.value)">
-            <button>Set Grid Size</button>
+            <div class ="gridSize">
+                <input type = "Text" placeholder="Board size" value="16" onchange="changeSize(this.value)">
+                <button class="setGrid">Set Grid Size</button>
+            </div>
         </div>
         <div class="sketchContainer"></div>
 

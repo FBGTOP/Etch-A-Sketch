@@ -11,7 +11,10 @@
 
 .tools{
     width: 30%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .sketchContainer{
@@ -19,4 +22,18 @@
     width: 500px;
     border: 2px solid black;
     display: grid;
+}
+
+.gridSize{
+    display: block;
+    text-align: center;
+}
+
+button{
+    width: 75px;
+}
+
+button.setGrid{
+    width: 120px;
+    height: 21px;
 }
