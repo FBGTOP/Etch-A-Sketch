@@ -1,3 +1,5 @@
+let penColour = "black";
+
 function createBoard(size){
 
     let board = document.querySelector(".sketchContainer");
@@ -12,9 +14,7 @@ function createBoard(size){
 
     for(let i = 0; i < totalSize; i++){
         let square = document.createElement("div");
-        square.addEventListener("mouseover", ()=>{
-            square.style.backgroundColor = "black";
-        })
+        square.addEventListener("mouseover", colourSquare)
         square.style.backgroundColor = "white";
         board.insertAdjacentElement("beforeend", square);
     }
@@ -30,5 +30,13 @@ function changeSize(input){
     else{
         console.log("Non valid board size");
     }
+}
+
+function colourSquare(){
+    this.style.backgroundColor = penColour;
+}
+
+function changeColour(choice){
+    penColour = choice;
 }
 
