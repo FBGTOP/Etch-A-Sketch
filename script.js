@@ -1,9 +1,9 @@
 let penColour = "black";
 let click = false;
+let board = document.querySelector(".sketchContainer");
 
 function createBoard(size){
 
-    let board = document.querySelector(".sketchContainer");
     let input = document.querySelector("input");
     input.value = size;  //Resets the user input value to initial
 
@@ -24,8 +24,9 @@ function createBoard(size){
 }
 
 createBoard(16);
-document.querySelector(".sketchContainer").addEventListener("mousedown", mouseDownDraw)
-document.querySelector(".sketchContainer").addEventListener("mouseup", mouseUpStop)
+board.addEventListener("mousedown", mouseDownDraw)
+board.addEventListener("mouseup", mouseUpStop)
+board.addEventListener("dragstart", (e) => e.preventDefault());
 
 
 function changeSize(input){

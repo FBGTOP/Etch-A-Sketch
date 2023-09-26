@@ -17,9 +17,9 @@
             <button onclick="changeColour('green')">Green</button>
             <button onclick="changeColour('white')">Eraser</button>
             <button onclick="changeColour('random')">Random</button>
-            <button onclick="createBoard(16)">Reset</button> <!---Resets grid to initial 16x16 with blank canvas-->
+            <button onclick="createBoard(document.querySelector('.userChoice').value)">Reset</button> <!---Resets grid to initial 16x16 with blank canvas-->
             <div class ="gridSize">
-                <input type = "Text" placeholder="Board size" value="16" onchange="changeSize(this.value)">
+                <input class = "userChoice" type = "Text" placeholder="Board size" value="16" onchange="changeSize(this.value)">
                 <button class="setGrid">Set Grid Size</button>
             </div>
         </div>
