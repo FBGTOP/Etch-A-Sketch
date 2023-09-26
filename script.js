@@ -23,9 +23,9 @@ function createBoard(size){
     }
 }
 
-createBoard(16);
-board.addEventListener("mousedown", mouseDownDraw)
-board.addEventListener("mouseup", mouseUpStop)
+createBoard(document.querySelector('.userChoice').value);
+board.addEventListener("mousedown", mouseDownDraw);
+board.addEventListener("mouseup", mouseUpStop);
 board.addEventListener("dragstart", (e) => e.preventDefault());
 
 
